@@ -2,23 +2,16 @@ version: "3.8"
 
 services:
   # Define your service(s) here
-  drupal:
+  web:
     image: drupal:9
     ports:
       - 8080:80
-#    volumes:
-#      - <host_path>:<container_path>
     restart: unless-stopped
-#    environment:
-#      - <environment_variable>=<value>
 
-  postgres:
+
+  db:
     image: postgres:14
-    ports:
-#      - <host_port>:<container_port>
-#    volumes:
-#      - <host_path>:<container_path>
-#    restart: unless-stopped
+    restart: unless-stopped
     environment:
       - POSTGRES_PASSWORD=pass
       - POSTGRES_DB=drupal
