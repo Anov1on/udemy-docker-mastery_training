@@ -1,6 +1,6 @@
 # create your custom drupal image here, based of official drupal
 
-FROM durpal:9
+FROM drupal:9
 
 RUN apt-get update && apt-get install -y \ 
     git \
